@@ -1,0 +1,104 @@
+$xsm-font: 6pt;
+$sm-font: 8pt;
+$md-font: 11pt;
+$lg-font: 16pt;
+$xlg-font: 20pt;
+
+
+:root {
+    // RIGHT, will work in all Sass versions.
+    --xsm-font: #{$xsm-font};
+    --sm-font: #{$sm-font};
+    --md-font: #{$md-font};
+    --lg-font: #{$lg-font};
+    --xlg-font: #{$xlg-font};
+
+}
+
+@import url("https://use.typekit.net/qnz1vyv.css");
+
+$base-size: 5;
+$DS_light: 'Davis Sans Light';
+$DS_Light_Italic: 'Davis Sans Light Italic';
+$DS_Medium: 'Davis Sans Medium';
+$DS_Medium_Italic: 'Davis Sans Medium Italic';
+$DS_Regular: 'Davis Sans Regular';
+$DS_Bold: 'Davis Sans Bold';
+$DS_Bold_Italic: 'Davis Sans Bold Italic';
+
+@mixin DS_Light {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 300;
+
+    font-style: normal;
+}
+
+@mixin DS_Light_Italic {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 300;
+
+    font-style: italic;
+}
+
+@mixin DS_Italic {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+@mixin DS_Medium {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 500;
+
+    font-style: normal;
+}
+
+@mixin DS_Regular {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 400;
+
+    font-style: normal;
+}
+
+@mixin DS_Medium_Italic {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 500;
+
+    font-style: italic;
+}
+
+@mixin DS_Bold {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 700;
+
+    font-style: normal;
+}
+
+@mixin DS_Bold_Italic {
+    font-family: davis-sans,
+        sans-serif;
+
+    font-weight: 700;
+
+    font-style: italic;
+}
+
+
+html {
+    @include DS_Regular;
+}

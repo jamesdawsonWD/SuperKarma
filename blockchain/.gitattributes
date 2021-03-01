@@ -1,0 +1,5 @@
+*.sol linguist-language=Solidity
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=input
+# Ignore all differences in line endings
+* -crlf

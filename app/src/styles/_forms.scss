@@ -1,0 +1,61 @@
+input {
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.form-row {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+
+    label {
+        position: absolute;
+        left: 25px;
+        top: 15px;
+        color: var(--main-secondary);
+        text-transform: uppercase;
+        font-size: var(--sm-font);
+
+        @include DS_Light;
+
+    }
+
+    input {
+        width: 100%;
+        height: 80px;
+        border-radius: 8px;
+        background: var(--sub-foreground-color);
+        box-sizing: border-box;
+        padding: 25px 250px 0 25px;
+        font-size: var(--md-font);
+        color: var(--main-font);
+        border: 1px solid var(--sub-foreground-color);
+        @include DS_Medium;
+
+        &:active,
+        &:focus {
+            border: 1px solid var(--button-color);
+        }
+    }
+
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: var(--main-secondary);
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: var(--main-secondary);
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: var(--main-secondary);
+    }
+
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: var(--main-secondary);
+    }
+}

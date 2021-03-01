@@ -1,0 +1,28 @@
+$main-font: #141e27;
+$main-secondary: #aab8c1;
+$offset-white: #ebebeb;
+$main-black: #141414;
+$background-color: #070a0e;
+$bg-color: #f2f7fd;
+$foreground-color: #ffffff;
+$sub-foreground-color: #f3f7fa;
+$button-color: #2eb878;
+$warning-color: #ffd166;
+$danger-color: #ef476f;
+$brown-color: #805120;
+
+:root {
+    // RIGHT, will work in all Sass versions.
+    --main-font: #{$main-font};
+    --main-secondary: #{$main-secondary};
+    --button-color: #{$button-color};
+    --foreground-color: #{$foreground-color};
+    --sub-foreground-color: #{$sub-foreground-color};
+    --offset-white: #{$offset-white};
+    --main-black: #{$main-black};
+    --background-color: #{$background-color};
+    --bg-color: #{$bg-color};
+    --warning-color: #{$warning-color};
+    --danger-color: #{$danger-color};
+    --brown-color: #{$brown-color};
+}

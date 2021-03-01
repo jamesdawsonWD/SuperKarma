@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--main-font);
+    @include DS_Bold;
+}
+
+$base-size: 5;
+
+h5 {
+    font-size: #{$base-size * 1.8}pt;
+}
+
+h4 {
+    font-size: #{$base-size * 2.8}pt;
+}
+
+h3 {
+    font-size: #{$base-size * 4}pt;
+}
+
+h2 {
+    font-size: #{$base-size * 5}pt;
+}
+
+h1 {
+    font-size: #{$base-size * 22}pt;
+}
