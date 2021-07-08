@@ -723,7 +723,7 @@ contract ERC20 is Context, IERC20 {
 
 // File: contracts\MockERC20.sol
 
-pragma solidity 0.6.12;
+pragma solidity 0.7.0;
 
 
 contract MockERC20 is ERC20 {

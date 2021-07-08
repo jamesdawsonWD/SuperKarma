@@ -29,16 +29,36 @@ export const actions: ActionTree<UserInterfaceManager, RootState> = {
     ) {
         context.commit('SET_IS_LOADING', payload);
     },
+    UIM_addDonation(context: ActionContext<UserInterfaceManager, RootState>, payload: { donationPool: string }) {
+        const { UIM_getDonations } = context.getters;
+        console.log('here');
+        context.commit('SET_DONATION_ADDRESS', payload.donationPool);
 
-    UIM_setLocalStarPosition(context: ActionContext<UserInterfaceManager, RootState>, pos: StarPosition) {
-        context.commit('SET_LOCAL_STAR_POSITION', pos);
+        // if (UIM_getDonations.length == 0) {
+        //     console.log('here1');
+
+        //     context.commit('SET_DONATIONS', [{ donationPool: payload.donationPool, flowPercentage: '100' }]);
+        //     return;
+        // } else {
+        //     const basicShare = 100 / (UIM_getDonations.length + 1); // plus two here to increment the index from '0' to '1'
+        //     const donations = [];
+
+        //     for (const donation of UIM_getDonations) {
+        //         donations.push({
+        //             donationPool: donation.donationPool,
+        //             flowPercentage: basicShare
+        //         })
+        //     }
+
+        //     donations.push({
+        //         donationPool: payload.donationPool,
+        //         flowPercentage: basicShare
+        //     })
+
+        //     console.log('here');
+        // }
     },
 
-    UIM_setPlanetDiscoveredUi(
-        context: ActionContext<UserInterfaceManager, RootState>,
-        payload: { header: string; message: string }
-    ) {
-        context.commit('SET_PLANET_DISCOVERED_MESSAGE', payload.message);
-        context.commit('SET_PLANET_DISCOVERED_HEADER', payload.header);
-    }
+
+
 };

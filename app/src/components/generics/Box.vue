@@ -25,7 +25,6 @@ export default class Box extends Vue {}
 @import '@/styles';
 
 .box {
-    width: 600px;
     position: relative;
     display: flex;
     background-color: var(--foreground-color);

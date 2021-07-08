@@ -15,12 +15,62 @@ export const state: UserInterfaceManager = {
     success: {
         msg: ''
     },
-    localStarPosition: {
-        quadrant: 0,
-        sector: 0,
-        district: 0,
-        star: 0
-    },
+    donations: [
+
+    ],
+    donationAddress: '',
+    donationPools: [
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        },
+        {
+            symbol: 'DAIx',
+            name: 'DAIx Token',
+            title: 'Cancer Research Fund'
+        }
+    ],
     planetDiscoveredMessage: '',
     planetDiscoveredHeader: ''
 };

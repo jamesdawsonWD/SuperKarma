@@ -1,0 +1,337 @@
+{
+  "contractName": "IResolver",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"get\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Superfluid\",\"details\":\"Abstraction for a address resolver contract\",\"kind\":\"dev\",\"methods\":{\"get(string)\":{\"details\":\"Get address by name.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/interfaces/superFluidInterfaces/misc/IResolver.sol\":\"IResolver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/interfaces/superFluidInterfaces/misc/IResolver.sol\":{\"keccak256\":\"0x8f25a285bdf0717ae18ae1113563db566afb58709132488022276db1983f8b46\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://65b3d8df2243e348af428389070e6404c7fa3cb39d41ade79d99d97281a92d49\",\"dweb:/ipfs/QmWzu5HMcfMTAmDH2DobJ1TihdnmF6TVx6LyVMbuZ63CkZ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: AGPLv3\r\npragma solidity >= 0.5.0;\r\n\r\n/**\r\n * @dev Abstraction for a address resolver contract\r\n *\r\n * @author Superfluid\r\n */\r\ninterface IResolver {\r\n\r\n    /**\r\n     * @dev Get address by name.\r\n     */\r\n    function get(string calldata name) external view returns (address);\r\n\r\n}\r\n",
+  "sourcePath": "C:/Users/James/projects/erc20-vue-template/blockchain/contracts/interfaces/superFluidInterfaces/misc/IResolver.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/interfaces/superFluidInterfaces/misc/IResolver.sol",
+    "exportedSymbols": {
+      "IResolver": [
+        6566
+      ]
+    },
+    "id": 6567,
+    "license": "AGPLv3",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6556,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:25:24"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 6557,
+          "nodeType": "StructuredDocumentation",
+          "src": "65:88:24",
+          "text": " @dev Abstraction for a address resolver contract\n @author Superfluid"
+        },
+        "fullyImplemented": false,
+        "id": 6566,
+        "linearizedBaseContracts": [
+          6566
+        ],
+        "name": "IResolver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 6558,
+              "nodeType": "StructuredDocumentation",
+              "src": "184:46:24",
+              "text": " @dev Get address by name."
+            },
+            "functionSelector": "693ec85e",
+            "id": 6565,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6561,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6560,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6565,
+                  "src": "249:20:24",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6559,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "249:6:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "248:22:24"
+            },
+            "returnParameters": {
+              "id": 6564,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6563,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6565,
+                  "src": "294:7:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6562,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "294:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "293:9:24"
+            },
+            "scope": 6566,
+            "src": "236:67:24",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6567,
+        "src": "155:153:24"
+      }
+    ],
+    "src": "36:274:24"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/interfaces/superFluidInterfaces/misc/IResolver.sol",
+    "exportedSymbols": {
+      "IResolver": [
+        6566
+      ]
+    },
+    "id": 6567,
+    "license": "AGPLv3",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6556,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:25:24"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 6557,
+          "nodeType": "StructuredDocumentation",
+          "src": "65:88:24",
+          "text": " @dev Abstraction for a address resolver contract\n @author Superfluid"
+        },
+        "fullyImplemented": false,
+        "id": 6566,
+        "linearizedBaseContracts": [
+          6566
+        ],
+        "name": "IResolver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 6558,
+              "nodeType": "StructuredDocumentation",
+              "src": "184:46:24",
+              "text": " @dev Get address by name."
+            },
+            "functionSelector": "693ec85e",
+            "id": 6565,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6561,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6560,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6565,
+                  "src": "249:20:24",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6559,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "249:6:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "248:22:24"
+            },
+            "returnParameters": {
+              "id": 6564,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6563,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6565,
+                  "src": "294:7:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6562,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "294:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "293:9:24"
+            },
+            "scope": 6566,
+            "src": "236:67:24",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6567,
+        "src": "155:153:24"
+      }
+    ],
+    "src": "36:274:24"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2021-07-04T20:49:52.605Z",
+  "devdoc": {
+    "author": "Superfluid",
+    "details": "Abstraction for a address resolver contract",
+    "kind": "dev",
+    "methods": {
+      "get(string)": {
+        "details": "Get address by name."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

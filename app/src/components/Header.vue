@@ -2,11 +2,11 @@
     <header class="header">
         <div class="content">
             <div class="logo-container">
-                <h2>Test<span class="dot">.</span></h2>
+                <h2>SuperKarma<span class="dot">.</span></h2>
             </div>
             <div class="nav">
-                <router-link to="/">Home</router-link>
-                <router-link to="/map">Map</router-link>
+                <router-link to="/">Pools</router-link>
+                <router-link to="/map">Governance</router-link>
                 <button v-if="Address == emptyAddress" class="connect" @click="connectWallet()">
                     Connect
                 </button>
@@ -58,7 +58,6 @@ export default class Header extends Vue {
     height: auto;
     position: fixed;
     z-index: 10;
-    position: relative;
 
     .balance-wallet {
         position: absolute;
@@ -90,7 +89,7 @@ export default class Header extends Vue {
     }
 
     .content {
-        padding: 0 300px;
+        padding: 0 75px;
         display: flex;
         justify-content: space-between;
         align-items: center;

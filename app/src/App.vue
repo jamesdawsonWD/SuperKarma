@@ -44,7 +44,6 @@ export default {
     color: #2c3e50;
     height: 100vh;
     background-color: var(--bg-color);
-    overflow: scroll;
     overflow-x: hidden;
     /* Increase/decrease this value for cross-browser compatibility */
     box-sizing: content-box;

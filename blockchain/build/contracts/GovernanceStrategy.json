@@ -1,0 +1,3200 @@
+{
+  "contractName": "GovernanceStrategy",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_sKARMA",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "sKARMA",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTotalPropositionSupplyAt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTotalVotingSupplyAt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPropositionPowerAt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getVotingPowerAt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sKARMA\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getPropositionPowerAt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getTotalPropositionSupplyAt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getTotalVotingSupplyAt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getVotingPowerAt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"sKARMA\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"SuperKarma*\",\"details\":\"Smart contract containing logic to measure users' relative power to propose and vote. User Power = User Power from SuperKarma Token + User Power from stkSuperKarma Token. User Power from Token = Token Power + Token Power as Delegatee [- Token Power if user has delegated] Two wrapper functions linked to SuperKarma Tokens's GovernancePowerDelegationERC20.sol implementation - getPropositionPowerAt: fetching a user Proposition Power at a specified block - getVotingPowerAt: fetching a user Voting Power at a specified block\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Constructor, register tokens used for Voting and Proposition Powers.\",\"params\":{\"_sKARMA\":\"The address of the AAVE Token contract.*\"}},\"getPropositionPowerAt(address,uint256)\":{\"details\":\"Returns the Proposition Power of a user at a specific block number.\",\"params\":{\"blockNumber\":\"Blocknumber at which to fetch Proposition Power\",\"user\":\"Address of the user.\"},\"returns\":{\"_0\":\"Power number*\"}},\"getTotalPropositionSupplyAt(uint256)\":{\"details\":\"Returns the total supply of Proposition Tokens Available for Governance = AAVE Available for governance      + stkAAVE available The supply of AAVE staked in stkAAVE are not taken into account so: = (Supply of AAVE - AAVE in stkAAVE) + (Supply of stkAAVE) = Supply of AAVE, Since the supply of stkAAVE is equal to the number of AAVE staked\",\"params\":{\"blockNumber\":\"Blocknumber at which to evaluate\"},\"returns\":{\"_0\":\"total supply at blockNumber*\"}},\"getTotalVotingSupplyAt(uint256)\":{\"details\":\"Returns the total supply of Outstanding Voting Tokens\",\"params\":{\"blockNumber\":\"Blocknumber at which to evaluate\"},\"returns\":{\"_0\":\"total supply at blockNumber*\"}},\"getVotingPowerAt(address,uint256)\":{\"details\":\"Returns the Vote Power of a user at a specific block number.\",\"params\":{\"blockNumber\":\"Blocknumber at which to fetch Vote Power\",\"user\":\"Address of the user.\"},\"returns\":{\"_0\":\"Vote number*\"}}},\"title\":\"Governance Strategy contract\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/GovernanceStrategy.sol\":\"GovernanceStrategy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/GovernanceStrategy.sol\":{\"keccak256\":\"0xd512d39ef93b3da06a7d3e9b64e07fce0537531d63b244dd2ea36725deb77ac1\",\"license\":\"agpl-3.0\",\"urls\":[\"bzz-raw://9159a8057582215cf131ebad854d2c41412360e500ee1e12ef501a37c731229f\",\"dweb:/ipfs/QmYs6FSmZSzSUWcZT7chFwMgJqSajn8BZq2n1RRQp8mrwr\"]},\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IERC20.sol\":{\"keccak256\":\"0xca185b34ea3d64de8f9e08522239c8181b2e45447fe7d6080d25bf6bfe7300d9\",\"license\":\"agpl-3.0\",\"urls\":[\"bzz-raw://0856bf9737c417656465457c44eb01c3c4336185a7822bae2e88cc0df7ccfa21\",\"dweb:/ipfs/QmbTCpYu6GAXdPLXiAvUML7ZJVooC8gY4pvRZa96uv3xvy\"]},\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IGovernancePowerDelegationToken.sol\":{\"keccak256\":\"0xf15a244120e90cf453e5ed4fd8f9392fe16c39dfcf76c9595041018f0b02e531\",\"license\":\"agpl-3.0\",\"urls\":[\"bzz-raw://8c4a0ee259fbe42d179b25525ad7e77a97ba148ff9341e846c6ae8ce90858d4c\",\"dweb:/ipfs/QmPZiH5iuH6rPkdH5ZFeGG6WFjKt4of9xUiB5zRwTsDtya\"]},\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IGovernanceStrategy.sol\":{\"keccak256\":\"0x40b4b1bd006faef43a9c7522f35b30ca4d3731f3b3735ec95ca151b8533489c1\",\"license\":\"agpl-3.0\",\"urls\":[\"bzz-raw://62fdd38bed98f0168a5fcf94f4efb43e5c93ffccc1e28b58527f03874991d847\",\"dweb:/ipfs/QmacpoTfRDdi4XQyVFqniuPazrNztHgypwpHgzQCcpW5xn\"]}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b506040516103f53803806103f583398101604081905261002f91610044565b60601b6001600160601b031916608052610072565b600060208284031215610055578081fd5b81516001600160a01b038116811461006b578182fd5b9392505050565b60805160601c61035d6100986000398060e6528061014552806101e4525061035d6000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80637a71f9d71461005c5780639b599acd14610085578063a1076e581461009a578063eaeded5f146100ad578063f6b50203146100c0575b600080fd5b61006f61006a3660046102ab565b6100d3565b60405161007c919061031e565b60405180910390f35b61008d6100e4565b60405161007c91906102db565b61006f6100a8366004610275565b610108565b61006f6100bb366004610275565b61011d565b61006f6100ce3660046102ab565b61012b565b60006100de8261012b565b92915050565b7f000000000000000000000000000000000000000000000000000000000000000081565b6000610116838360016101ca565b9392505050565b6000610116838360006101ca565b604051630981b24d60e41b81526000906001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169063981b24d09061017a90859060040161031e565b60206040518083038186803b15801561019257600080fd5b505afa1580156101a6573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100de91906102c3565b60405163c2ffbb9160e01b81526000906001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169063c2ffbb919061021d908790879087906004016102ef565b60206040518083038186803b15801561023557600080fd5b505afa158015610249573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061026d91906102c3565b949350505050565b60008060408385031215610287578182fd5b82356001600160a01b038116811461029d578283fd5b946020939093013593505050565b6000602082840312156102bc578081fd5b5035919050565b6000602082840312156102d4578081fd5b5051919050565b6001600160a01b0391909116815260200190565b6001600160a01b038416815260208101839052606081016002831061031057fe5b826040830152949350505050565b9081526020019056fea264697066735822122075527c4808da7dd48868cf2faa10451804421c73d7a13f4b00aa381e719e343164736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80637a71f9d71461005c5780639b599acd14610085578063a1076e581461009a578063eaeded5f146100ad578063f6b50203146100c0575b600080fd5b61006f61006a3660046102ab565b6100d3565b60405161007c919061031e565b60405180910390f35b61008d6100e4565b60405161007c91906102db565b61006f6100a8366004610275565b610108565b61006f6100bb366004610275565b61011d565b61006f6100ce3660046102ab565b61012b565b60006100de8261012b565b92915050565b7f000000000000000000000000000000000000000000000000000000000000000081565b6000610116838360016101ca565b9392505050565b6000610116838360006101ca565b604051630981b24d60e41b81526000906001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169063981b24d09061017a90859060040161031e565b60206040518083038186803b15801561019257600080fd5b505afa1580156101a6573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100de91906102c3565b60405163c2ffbb9160e01b81526000906001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169063c2ffbb919061021d908790879087906004016102ef565b60206040518083038186803b15801561023557600080fd5b505afa158015610249573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061026d91906102c3565b949350505050565b60008060408385031215610287578182fd5b82356001600160a01b038116811461029d578283fd5b946020939093013593505050565b6000602082840312156102bc578081fd5b5035919050565b6000602082840312156102d4578081fd5b5051919050565b6001600160a01b0391909116815260200190565b6001600160a01b038416815260208101839052606081016002831061031057fe5b826040830152949350505050565b9081526020019056fea264697066735822122075527c4808da7dd48868cf2faa10451804421c73d7a13f4b00aa381e719e343164736f6c63430007000033",
+  "immutableReferences": {
+    "3174": [
+      {
+        "length": 32,
+        "start": 230
+      },
+      {
+        "length": 32,
+        "start": 325
+      },
+      {
+        "length": 32,
+        "start": 484
+      }
+    ]
+  },
+  "sourceMap": "951:2716:6:-:0;;;1213:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1260:16;;-1:-1:-1;;;;;;1260:16:6;;;951:2716;;146:263:-1;;261:2;249:9;240:7;236:23;232:32;229:2;;;-1:-1;;267:12;229:2;83:13;;-1:-1;;;;;576:54;;701:35;;691:2;;-1:-1;;740:12;691:2;319:74;223:186;-1:-1;;;223:186::o;:::-;951:2716:6;;;;;;;;;;;",
+  "deployedSourceMap": "951:2716:6:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2162:158;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1009:31;;;:::i;:::-;;;;;;;:::i;2573:312::-;;;;;;:::i;:::-;;:::i;3123:236::-;;;;;;:::i;:::-;;:::i;1800:164::-;;;;;;:::i;:::-;;:::i;2162:158::-;2245:7;2272:40;2300:11;2272:27;:40::i;:::-;2265:47;2162:158;-1:-1:-1;;2162:158:6:o;1009:31::-;;;:::o;2573:312::-;2669:7;2709:168;2745:4;2768:11;2798:64;2709:17;:168::i;:::-;2689:188;2573:312;-1:-1:-1;;;2573:312:6:o;3123:236::-;3214:7;3254:97;3272:4;3278:11;3291:59;3254:17;:97::i;1800:164::-;1915:41;;-1:-1:-1;;;1915:41:6;;1888:7;;-1:-1:-1;;;;;1922:6:6;1915:28;;;;:41;;1944:11;;1915:41;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;3367:297::-;3571:85;;-1:-1:-1;;;3571:85:6;;3544:7;;-1:-1:-1;;;;;3603:6:6;3571:55;;;;:85;;3627:4;;3633:11;;3646:9;;3571:85;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;3564:92;3367:297;-1:-1:-1;;;;3367:297:6:o;420:366:-1:-;;;541:2;529:9;520:7;516:23;512:32;509:2;;;-1:-1;;547:12;509:2;72:20;;-1:-1;;;;;2972:54;;3444:35;;3434:2;;-1:-1;;3483:12;3434:2;599:63;699:2;738:22;;;;209:20;;-1:-1;;;503:283::o;793:241::-;;897:2;885:9;876:7;872:23;868:32;865:2;;;-1:-1;;903:12;865:2;-1:-1;209:20;;859:175;-1:-1;859:175::o;1041:263::-;;1156:2;1144:9;1135:7;1131:23;1127:32;1124:2;;;-1:-1;;1162:12;1124:2;-1:-1;357:13;;1118:186;-1:-1;1118:186::o;1718:222::-;-1:-1;;;;;2972:54;;;;1382:37;;1845:2;1830:18;;1816:124::o;1947:478::-;-1:-1;;;;;2972:54;;1382:37;;2311:2;2296:18;;1669:37;;;2147:2;2132:18;;3356:1;3346:12;;3336:2;;3362:9;3336:2;3213:43;2411:2;2400:9;2396:18;1519:67;2118:307;;;;;;:::o;2432:222::-;1669:37;;;2559:2;2544:18;;2530:124::o",
+  "source": "// SPDX-License-Identifier: agpl-3.0\r\npragma solidity 0.7.0;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport {IGovernanceStrategy} from './interfaces/IGovernanceStrategy.sol';\r\nimport {IERC20} from './interfaces/IERC20.sol';\r\nimport {IGovernancePowerDelegationToken} from './interfaces/IGovernancePowerDelegationToken.sol';\r\n\r\n/**\r\n * @title Governance Strategy contract\r\n * @dev Smart contract containing logic to measure users' relative power to propose and vote.\r\n * User Power = User Power from SuperKarma Token + User Power from stkSuperKarma Token.\r\n * User Power from Token = Token Power + Token Power as Delegatee [- Token Power if user has delegated]\r\n * Two wrapper functions linked to SuperKarma Tokens's GovernancePowerDelegationERC20.sol implementation\r\n * - getPropositionPowerAt: fetching a user Proposition Power at a specified block\r\n * - getVotingPowerAt: fetching a user Voting Power at a specified block\r\n * @author SuperKarma\r\n **/\r\ncontract GovernanceStrategy is IGovernanceStrategy {\r\n    address public immutable sKARMA;\r\n\r\n    /**\r\n     * @dev Constructor, register tokens used for Voting and Proposition Powers.\r\n     * @param _sKARMA The address of the AAVE Token contract.\r\n     **/\r\n    constructor(address _sKARMA) public {\r\n        sKARMA = _sKARMA;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the total supply of Proposition Tokens Available for Governance\r\n     * = AAVE Available for governance      + stkAAVE available\r\n     * The supply of AAVE staked in stkAAVE are not taken into account so:\r\n     * = (Supply of AAVE - AAVE in stkAAVE) + (Supply of stkAAVE)\r\n     * = Supply of AAVE, Since the supply of stkAAVE is equal to the number of AAVE staked\r\n     * @param blockNumber Blocknumber at which to evaluate\r\n     * @return total supply at blockNumber\r\n     **/\r\n    function getTotalPropositionSupplyAt(uint256 blockNumber) public view override returns (uint256) {\r\n        return IERC20(sKARMA).totalSupplyAt(blockNumber);\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the total supply of Outstanding Voting Tokens\r\n     * @param blockNumber Blocknumber at which to evaluate\r\n     * @return total supply at blockNumber\r\n     **/\r\n    function getTotalVotingSupplyAt(uint256 blockNumber) public view override returns (uint256) {\r\n        return getTotalPropositionSupplyAt(blockNumber);\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the Proposition Power of a user at a specific block number.\r\n     * @param user Address of the user.\r\n     * @param blockNumber Blocknumber at which to fetch Proposition Power\r\n     * @return Power number\r\n     **/\r\n    function getPropositionPowerAt(address user, uint256 blockNumber) public view override returns (uint256) {\r\n        return\r\n            _getPowerByTypeAt(\r\n                user,\r\n                blockNumber,\r\n                IGovernancePowerDelegationToken.DelegationType.PROPOSITION_POWER\r\n            );\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the Vote Power of a user at a specific block number.\r\n     * @param user Address of the user.\r\n     * @param blockNumber Blocknumber at which to fetch Vote Power\r\n     * @return Vote number\r\n     **/\r\n    function getVotingPowerAt(address user, uint256 blockNumber) public view override returns (uint256) {\r\n        return\r\n            _getPowerByTypeAt(user, blockNumber, IGovernancePowerDelegationToken.DelegationType.VOTING_POWER);\r\n    }\r\n\r\n    function _getPowerByTypeAt(\r\n        address user,\r\n        uint256 blockNumber,\r\n        IGovernancePowerDelegationToken.DelegationType powerType\r\n    ) internal view returns (uint256) {\r\n        return IGovernancePowerDelegationToken(sKARMA).getPowerAtBlock(user, blockNumber, powerType);\r\n    }\r\n}\r\n",
+  "sourcePath": "C:/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/GovernanceStrategy.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/GovernanceStrategy.sol",
+    "exportedSymbols": {
+      "GovernanceStrategy": [
+        3278
+      ]
+    },
+    "id": 3279,
+    "license": "agpl-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3162,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:6"
+      },
+      {
+        "id": 3163,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "62:33:6"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IGovernanceStrategy.sol",
+        "file": "./interfaces/IGovernanceStrategy.sol",
+        "id": 3165,
+        "nodeType": "ImportDirective",
+        "scope": 3279,
+        "sourceUnit": 5277,
+        "src": "99:73:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3164,
+              "name": "IGovernanceStrategy",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "107:19:6",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IERC20.sol",
+        "file": "./interfaces/IERC20.sol",
+        "id": 3167,
+        "nodeType": "ImportDirective",
+        "scope": 3279,
+        "sourceUnit": 5039,
+        "src": "174:47:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3166,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "182:6:6",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IGovernancePowerDelegationToken.sol",
+        "file": "./interfaces/IGovernancePowerDelegationToken.sol",
+        "id": 3169,
+        "nodeType": "ImportDirective",
+        "scope": 3279,
+        "sourceUnit": 5238,
+        "src": "223:97:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3168,
+              "name": "IGovernancePowerDelegationToken",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "231:31:6",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3171,
+              "name": "IGovernanceStrategy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5276,
+              "src": "982:19:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IGovernanceStrategy_$5276",
+                "typeString": "contract IGovernanceStrategy"
+              }
+            },
+            "id": 3172,
+            "nodeType": "InheritanceSpecifier",
+            "src": "982:19:6"
+          }
+        ],
+        "contractDependencies": [
+          5276
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3170,
+          "nodeType": "StructuredDocumentation",
+          "src": "324:625:6",
+          "text": " @title Governance Strategy contract\n @dev Smart contract containing logic to measure users' relative power to propose and vote.\n User Power = User Power from SuperKarma Token + User Power from stkSuperKarma Token.\n User Power from Token = Token Power + Token Power as Delegatee [- Token Power if user has delegated]\n Two wrapper functions linked to SuperKarma Tokens's GovernancePowerDelegationERC20.sol implementation\n - getPropositionPowerAt: fetching a user Proposition Power at a specified block\n - getVotingPowerAt: fetching a user Voting Power at a specified block\n @author SuperKarma*"
+        },
+        "fullyImplemented": true,
+        "id": 3278,
+        "linearizedBaseContracts": [
+          3278,
+          5276
+        ],
+        "name": "GovernanceStrategy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "9b599acd",
+            "id": 3174,
+            "mutability": "immutable",
+            "name": "sKARMA",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3278,
+            "src": "1009:31:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3173,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1009:7:6",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3184,
+              "nodeType": "Block",
+              "src": "1249:35:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3182,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3180,
+                      "name": "sKARMA",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3174,
+                      "src": "1260:6:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3181,
+                      "name": "_sKARMA",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3177,
+                      "src": "1269:7:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1260:16:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 3183,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1260:16:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3175,
+              "nodeType": "StructuredDocumentation",
+              "src": "1049:158:6",
+              "text": " @dev Constructor, register tokens used for Voting and Proposition Powers.\n @param _sKARMA The address of the AAVE Token contract.*"
+            },
+            "id": 3185,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3178,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3177,
+                  "mutability": "mutable",
+                  "name": "_sKARMA",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3185,
+                  "src": "1225:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3176,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1225:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1224:17:6"
+            },
+            "returnParameters": {
+              "id": 3179,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1249:0:6"
+            },
+            "scope": 3278,
+            "src": "1213:71:6",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5257
+            ],
+            "body": {
+              "id": 3201,
+              "nodeType": "Block",
+              "src": "1897:67:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3198,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3188,
+                        "src": "1944:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3195,
+                            "name": "sKARMA",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3174,
+                            "src": "1922:6:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3194,
+                          "name": "IERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5038,
+                          "src": "1915:6:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IERC20_$5038_$",
+                            "typeString": "type(contract IERC20)"
+                          }
+                        },
+                        "id": 3196,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1915:14:6",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IERC20_$5038",
+                          "typeString": "contract IERC20"
+                        }
+                      },
+                      "id": 3197,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "totalSupplyAt",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5030,
+                      "src": "1915:28:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) view external returns (uint256)"
+                      }
+                    },
+                    "id": 3199,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1915:41:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3193,
+                  "id": 3200,
+                  "nodeType": "Return",
+                  "src": "1908:48:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3186,
+              "nodeType": "StructuredDocumentation",
+              "src": "1292:502:6",
+              "text": " @dev Returns the total supply of Proposition Tokens Available for Governance\n = AAVE Available for governance      + stkAAVE available\n The supply of AAVE staked in stkAAVE are not taken into account so:\n = (Supply of AAVE - AAVE in stkAAVE) + (Supply of stkAAVE)\n = Supply of AAVE, Since the supply of stkAAVE is equal to the number of AAVE staked\n @param blockNumber Blocknumber at which to evaluate\n @return total supply at blockNumber*"
+            },
+            "functionSelector": "f6b50203",
+            "id": 3202,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTotalPropositionSupplyAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3190,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1870:8:6"
+            },
+            "parameters": {
+              "id": 3189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3188,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3202,
+                  "src": "1837:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3187,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1837:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1836:21:6"
+            },
+            "returnParameters": {
+              "id": 3193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3192,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3202,
+                  "src": "1888:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3191,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1888:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1887:9:6"
+            },
+            "scope": 3278,
+            "src": "1800:164:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5265
+            ],
+            "body": {
+              "id": 3215,
+              "nodeType": "Block",
+              "src": "2254:66:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3212,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3205,
+                        "src": "2300:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 3211,
+                      "name": "getTotalPropositionSupplyAt",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3202,
+                      "src": "2272:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) view returns (uint256)"
+                      }
+                    },
+                    "id": 3213,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2272:40:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3210,
+                  "id": 3214,
+                  "nodeType": "Return",
+                  "src": "2265:47:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3203,
+              "nodeType": "StructuredDocumentation",
+              "src": "1972:184:6",
+              "text": " @dev Returns the total supply of Outstanding Voting Tokens\n @param blockNumber Blocknumber at which to evaluate\n @return total supply at blockNumber*"
+            },
+            "functionSelector": "7a71f9d7",
+            "id": 3216,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTotalVotingSupplyAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3207,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "2227:8:6"
+            },
+            "parameters": {
+              "id": 3206,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3205,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3216,
+                  "src": "2194:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3204,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2194:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2193:21:6"
+            },
+            "returnParameters": {
+              "id": 3210,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3209,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3216,
+                  "src": "2245:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3208,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2245:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2244:9:6"
+            },
+            "scope": 3278,
+            "src": "2162:158:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5249
+            ],
+            "body": {
+              "id": 3235,
+              "nodeType": "Block",
+              "src": "2678:207:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3228,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3219,
+                        "src": "2745:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3229,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3221,
+                        "src": "2768:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3230,
+                            "name": "IGovernancePowerDelegationToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5237,
+                            "src": "2798:31:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_IGovernancePowerDelegationToken_$5237_$",
+                              "typeString": "type(contract IGovernancePowerDelegationToken)"
+                            }
+                          },
+                          "id": 3231,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "DelegationType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 5224,
+                          "src": "2798:46:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_DelegationType_$5224_$",
+                            "typeString": "type(enum IGovernancePowerDelegationToken.DelegationType)"
+                          }
+                        },
+                        "id": 3232,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "PROPOSITION_POWER",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2798:64:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      ],
+                      "id": 3227,
+                      "name": "_getPowerByTypeAt",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3277,
+                      "src": "2709:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$_t_enum$_DelegationType_$5224_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256,enum IGovernancePowerDelegationToken.DelegationType) view returns (uint256)"
+                      }
+                    },
+                    "id": 3233,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2709:168:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3226,
+                  "id": 3234,
+                  "nodeType": "Return",
+                  "src": "2689:188:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3217,
+              "nodeType": "StructuredDocumentation",
+              "src": "2328:239:6",
+              "text": " @dev Returns the Proposition Power of a user at a specific block number.\n @param user Address of the user.\n @param blockNumber Blocknumber at which to fetch Proposition Power\n @return Power number*"
+            },
+            "functionSelector": "a1076e58",
+            "id": 3236,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPropositionPowerAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3223,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "2651:8:6"
+            },
+            "parameters": {
+              "id": 3222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3219,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3236,
+                  "src": "2604:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3218,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2604:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3221,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3236,
+                  "src": "2618:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3220,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2618:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2603:35:6"
+            },
+            "returnParameters": {
+              "id": 3226,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3225,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3236,
+                  "src": "2669:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3224,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2669:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2668:9:6"
+            },
+            "scope": 3278,
+            "src": "2573:312:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5275
+            ],
+            "body": {
+              "id": 3255,
+              "nodeType": "Block",
+              "src": "3223:136:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3248,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3239,
+                        "src": "3272:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3249,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3241,
+                        "src": "3278:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3250,
+                            "name": "IGovernancePowerDelegationToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5237,
+                            "src": "3291:31:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_IGovernancePowerDelegationToken_$5237_$",
+                              "typeString": "type(contract IGovernancePowerDelegationToken)"
+                            }
+                          },
+                          "id": 3251,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "DelegationType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 5224,
+                          "src": "3291:46:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_DelegationType_$5224_$",
+                            "typeString": "type(enum IGovernancePowerDelegationToken.DelegationType)"
+                          }
+                        },
+                        "id": 3252,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "VOTING_POWER",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "3291:59:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      ],
+                      "id": 3247,
+                      "name": "_getPowerByTypeAt",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3277,
+                      "src": "3254:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$_t_enum$_DelegationType_$5224_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256,enum IGovernancePowerDelegationToken.DelegationType) view returns (uint256)"
+                      }
+                    },
+                    "id": 3253,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3254:97:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3246,
+                  "id": 3254,
+                  "nodeType": "Return",
+                  "src": "3234:117:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3237,
+              "nodeType": "StructuredDocumentation",
+              "src": "2893:224:6",
+              "text": " @dev Returns the Vote Power of a user at a specific block number.\n @param user Address of the user.\n @param blockNumber Blocknumber at which to fetch Vote Power\n @return Vote number*"
+            },
+            "functionSelector": "eaeded5f",
+            "id": 3256,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getVotingPowerAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3243,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "3196:8:6"
+            },
+            "parameters": {
+              "id": 3242,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3239,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3256,
+                  "src": "3149:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3238,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3149:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3241,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3256,
+                  "src": "3163:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3240,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3163:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3148:35:6"
+            },
+            "returnParameters": {
+              "id": 3246,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3245,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3256,
+                  "src": "3214:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3244,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3214:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3213:9:6"
+            },
+            "scope": 3278,
+            "src": "3123:236:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3276,
+              "nodeType": "Block",
+              "src": "3553:111:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3271,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3258,
+                        "src": "3627:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3272,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3260,
+                        "src": "3633:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3273,
+                        "name": "powerType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3262,
+                        "src": "3646:9:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3268,
+                            "name": "sKARMA",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3174,
+                            "src": "3603:6:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3267,
+                          "name": "IGovernancePowerDelegationToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5237,
+                          "src": "3571:31:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IGovernancePowerDelegationToken_$5237_$",
+                            "typeString": "type(contract IGovernancePowerDelegationToken)"
+                          }
+                        },
+                        "id": 3269,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "3571:39:6",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IGovernancePowerDelegationToken_$5237",
+                          "typeString": "contract IGovernancePowerDelegationToken"
+                        }
+                      },
+                      "id": 3270,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getPowerAtBlock",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5236,
+                      "src": "3571:55:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$_t_enum$_DelegationType_$5224_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256,enum IGovernancePowerDelegationToken.DelegationType) view external returns (uint256)"
+                      }
+                    },
+                    "id": 3274,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3571:85:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3266,
+                  "id": 3275,
+                  "nodeType": "Return",
+                  "src": "3564:92:6"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3277,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_getPowerByTypeAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3258,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3404:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3257,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3404:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3260,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3427:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3259,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3427:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3262,
+                  "mutability": "mutable",
+                  "name": "powerType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3457:56:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DelegationType_$5224",
+                    "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3261,
+                    "name": "IGovernancePowerDelegationToken.DelegationType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5224,
+                    "src": "3457:46:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DelegationType_$5224",
+                      "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3393:127:6"
+            },
+            "returnParameters": {
+              "id": 3266,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3265,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3544:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3264,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3544:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3543:9:6"
+            },
+            "scope": 3278,
+            "src": "3367:297:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3279,
+        "src": "951:2716:6"
+      }
+    ],
+    "src": "38:3631:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/GovernanceStrategy.sol",
+    "exportedSymbols": {
+      "GovernanceStrategy": [
+        3278
+      ]
+    },
+    "id": 3279,
+    "license": "agpl-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3162,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:6"
+      },
+      {
+        "id": 3163,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "62:33:6"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IGovernanceStrategy.sol",
+        "file": "./interfaces/IGovernanceStrategy.sol",
+        "id": 3165,
+        "nodeType": "ImportDirective",
+        "scope": 3279,
+        "sourceUnit": 5277,
+        "src": "99:73:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3164,
+              "name": "IGovernanceStrategy",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "107:19:6",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IERC20.sol",
+        "file": "./interfaces/IERC20.sol",
+        "id": 3167,
+        "nodeType": "ImportDirective",
+        "scope": 3279,
+        "sourceUnit": 5039,
+        "src": "174:47:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3166,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "182:6:6",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IGovernancePowerDelegationToken.sol",
+        "file": "./interfaces/IGovernancePowerDelegationToken.sol",
+        "id": 3169,
+        "nodeType": "ImportDirective",
+        "scope": 3279,
+        "sourceUnit": 5238,
+        "src": "223:97:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3168,
+              "name": "IGovernancePowerDelegationToken",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "231:31:6",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3171,
+              "name": "IGovernanceStrategy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5276,
+              "src": "982:19:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IGovernanceStrategy_$5276",
+                "typeString": "contract IGovernanceStrategy"
+              }
+            },
+            "id": 3172,
+            "nodeType": "InheritanceSpecifier",
+            "src": "982:19:6"
+          }
+        ],
+        "contractDependencies": [
+          5276
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3170,
+          "nodeType": "StructuredDocumentation",
+          "src": "324:625:6",
+          "text": " @title Governance Strategy contract\n @dev Smart contract containing logic to measure users' relative power to propose and vote.\n User Power = User Power from SuperKarma Token + User Power from stkSuperKarma Token.\n User Power from Token = Token Power + Token Power as Delegatee [- Token Power if user has delegated]\n Two wrapper functions linked to SuperKarma Tokens's GovernancePowerDelegationERC20.sol implementation\n - getPropositionPowerAt: fetching a user Proposition Power at a specified block\n - getVotingPowerAt: fetching a user Voting Power at a specified block\n @author SuperKarma*"
+        },
+        "fullyImplemented": true,
+        "id": 3278,
+        "linearizedBaseContracts": [
+          3278,
+          5276
+        ],
+        "name": "GovernanceStrategy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "9b599acd",
+            "id": 3174,
+            "mutability": "immutable",
+            "name": "sKARMA",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 3278,
+            "src": "1009:31:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3173,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1009:7:6",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3184,
+              "nodeType": "Block",
+              "src": "1249:35:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3182,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3180,
+                      "name": "sKARMA",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3174,
+                      "src": "1260:6:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3181,
+                      "name": "_sKARMA",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3177,
+                      "src": "1269:7:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1260:16:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 3183,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1260:16:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3175,
+              "nodeType": "StructuredDocumentation",
+              "src": "1049:158:6",
+              "text": " @dev Constructor, register tokens used for Voting and Proposition Powers.\n @param _sKARMA The address of the AAVE Token contract.*"
+            },
+            "id": 3185,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3178,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3177,
+                  "mutability": "mutable",
+                  "name": "_sKARMA",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3185,
+                  "src": "1225:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3176,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1225:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1224:17:6"
+            },
+            "returnParameters": {
+              "id": 3179,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1249:0:6"
+            },
+            "scope": 3278,
+            "src": "1213:71:6",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5257
+            ],
+            "body": {
+              "id": 3201,
+              "nodeType": "Block",
+              "src": "1897:67:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3198,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3188,
+                        "src": "1944:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3195,
+                            "name": "sKARMA",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3174,
+                            "src": "1922:6:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3194,
+                          "name": "IERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5038,
+                          "src": "1915:6:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IERC20_$5038_$",
+                            "typeString": "type(contract IERC20)"
+                          }
+                        },
+                        "id": 3196,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1915:14:6",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IERC20_$5038",
+                          "typeString": "contract IERC20"
+                        }
+                      },
+                      "id": 3197,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "totalSupplyAt",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5030,
+                      "src": "1915:28:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) view external returns (uint256)"
+                      }
+                    },
+                    "id": 3199,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1915:41:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3193,
+                  "id": 3200,
+                  "nodeType": "Return",
+                  "src": "1908:48:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3186,
+              "nodeType": "StructuredDocumentation",
+              "src": "1292:502:6",
+              "text": " @dev Returns the total supply of Proposition Tokens Available for Governance\n = AAVE Available for governance      + stkAAVE available\n The supply of AAVE staked in stkAAVE are not taken into account so:\n = (Supply of AAVE - AAVE in stkAAVE) + (Supply of stkAAVE)\n = Supply of AAVE, Since the supply of stkAAVE is equal to the number of AAVE staked\n @param blockNumber Blocknumber at which to evaluate\n @return total supply at blockNumber*"
+            },
+            "functionSelector": "f6b50203",
+            "id": 3202,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTotalPropositionSupplyAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3190,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1870:8:6"
+            },
+            "parameters": {
+              "id": 3189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3188,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3202,
+                  "src": "1837:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3187,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1837:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1836:21:6"
+            },
+            "returnParameters": {
+              "id": 3193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3192,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3202,
+                  "src": "1888:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3191,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1888:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1887:9:6"
+            },
+            "scope": 3278,
+            "src": "1800:164:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5265
+            ],
+            "body": {
+              "id": 3215,
+              "nodeType": "Block",
+              "src": "2254:66:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3212,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3205,
+                        "src": "2300:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 3211,
+                      "name": "getTotalPropositionSupplyAt",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3202,
+                      "src": "2272:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) view returns (uint256)"
+                      }
+                    },
+                    "id": 3213,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2272:40:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3210,
+                  "id": 3214,
+                  "nodeType": "Return",
+                  "src": "2265:47:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3203,
+              "nodeType": "StructuredDocumentation",
+              "src": "1972:184:6",
+              "text": " @dev Returns the total supply of Outstanding Voting Tokens\n @param blockNumber Blocknumber at which to evaluate\n @return total supply at blockNumber*"
+            },
+            "functionSelector": "7a71f9d7",
+            "id": 3216,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTotalVotingSupplyAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3207,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "2227:8:6"
+            },
+            "parameters": {
+              "id": 3206,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3205,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3216,
+                  "src": "2194:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3204,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2194:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2193:21:6"
+            },
+            "returnParameters": {
+              "id": 3210,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3209,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3216,
+                  "src": "2245:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3208,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2245:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2244:9:6"
+            },
+            "scope": 3278,
+            "src": "2162:158:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5249
+            ],
+            "body": {
+              "id": 3235,
+              "nodeType": "Block",
+              "src": "2678:207:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3228,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3219,
+                        "src": "2745:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3229,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3221,
+                        "src": "2768:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3230,
+                            "name": "IGovernancePowerDelegationToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5237,
+                            "src": "2798:31:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_IGovernancePowerDelegationToken_$5237_$",
+                              "typeString": "type(contract IGovernancePowerDelegationToken)"
+                            }
+                          },
+                          "id": 3231,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "DelegationType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 5224,
+                          "src": "2798:46:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_DelegationType_$5224_$",
+                            "typeString": "type(enum IGovernancePowerDelegationToken.DelegationType)"
+                          }
+                        },
+                        "id": 3232,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "PROPOSITION_POWER",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2798:64:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      ],
+                      "id": 3227,
+                      "name": "_getPowerByTypeAt",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3277,
+                      "src": "2709:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$_t_enum$_DelegationType_$5224_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256,enum IGovernancePowerDelegationToken.DelegationType) view returns (uint256)"
+                      }
+                    },
+                    "id": 3233,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2709:168:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3226,
+                  "id": 3234,
+                  "nodeType": "Return",
+                  "src": "2689:188:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3217,
+              "nodeType": "StructuredDocumentation",
+              "src": "2328:239:6",
+              "text": " @dev Returns the Proposition Power of a user at a specific block number.\n @param user Address of the user.\n @param blockNumber Blocknumber at which to fetch Proposition Power\n @return Power number*"
+            },
+            "functionSelector": "a1076e58",
+            "id": 3236,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPropositionPowerAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3223,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "2651:8:6"
+            },
+            "parameters": {
+              "id": 3222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3219,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3236,
+                  "src": "2604:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3218,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2604:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3221,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3236,
+                  "src": "2618:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3220,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2618:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2603:35:6"
+            },
+            "returnParameters": {
+              "id": 3226,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3225,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3236,
+                  "src": "2669:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3224,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2669:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2668:9:6"
+            },
+            "scope": 3278,
+            "src": "2573:312:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              5275
+            ],
+            "body": {
+              "id": 3255,
+              "nodeType": "Block",
+              "src": "3223:136:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3248,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3239,
+                        "src": "3272:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3249,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3241,
+                        "src": "3278:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3250,
+                            "name": "IGovernancePowerDelegationToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5237,
+                            "src": "3291:31:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_IGovernancePowerDelegationToken_$5237_$",
+                              "typeString": "type(contract IGovernancePowerDelegationToken)"
+                            }
+                          },
+                          "id": 3251,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "DelegationType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 5224,
+                          "src": "3291:46:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_DelegationType_$5224_$",
+                            "typeString": "type(enum IGovernancePowerDelegationToken.DelegationType)"
+                          }
+                        },
+                        "id": 3252,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "VOTING_POWER",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "3291:59:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      ],
+                      "id": 3247,
+                      "name": "_getPowerByTypeAt",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3277,
+                      "src": "3254:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$_t_enum$_DelegationType_$5224_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256,enum IGovernancePowerDelegationToken.DelegationType) view returns (uint256)"
+                      }
+                    },
+                    "id": 3253,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3254:97:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3246,
+                  "id": 3254,
+                  "nodeType": "Return",
+                  "src": "3234:117:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3237,
+              "nodeType": "StructuredDocumentation",
+              "src": "2893:224:6",
+              "text": " @dev Returns the Vote Power of a user at a specific block number.\n @param user Address of the user.\n @param blockNumber Blocknumber at which to fetch Vote Power\n @return Vote number*"
+            },
+            "functionSelector": "eaeded5f",
+            "id": 3256,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getVotingPowerAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 3243,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "3196:8:6"
+            },
+            "parameters": {
+              "id": 3242,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3239,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3256,
+                  "src": "3149:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3238,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3149:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3241,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3256,
+                  "src": "3163:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3240,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3163:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3148:35:6"
+            },
+            "returnParameters": {
+              "id": 3246,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3245,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3256,
+                  "src": "3214:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3244,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3214:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3213:9:6"
+            },
+            "scope": 3278,
+            "src": "3123:236:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3276,
+              "nodeType": "Block",
+              "src": "3553:111:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3271,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3258,
+                        "src": "3627:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3272,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3260,
+                        "src": "3633:11:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3273,
+                        "name": "powerType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3262,
+                        "src": "3646:9:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DelegationType_$5224",
+                          "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3268,
+                            "name": "sKARMA",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3174,
+                            "src": "3603:6:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3267,
+                          "name": "IGovernancePowerDelegationToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5237,
+                          "src": "3571:31:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IGovernancePowerDelegationToken_$5237_$",
+                            "typeString": "type(contract IGovernancePowerDelegationToken)"
+                          }
+                        },
+                        "id": 3269,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "3571:39:6",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IGovernancePowerDelegationToken_$5237",
+                          "typeString": "contract IGovernancePowerDelegationToken"
+                        }
+                      },
+                      "id": 3270,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getPowerAtBlock",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5236,
+                      "src": "3571:55:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$_t_enum$_DelegationType_$5224_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256,enum IGovernancePowerDelegationToken.DelegationType) view external returns (uint256)"
+                      }
+                    },
+                    "id": 3274,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3571:85:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 3266,
+                  "id": 3275,
+                  "nodeType": "Return",
+                  "src": "3564:92:6"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3277,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_getPowerByTypeAt",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3258,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3404:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3257,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3404:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3260,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3427:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3259,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3427:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3262,
+                  "mutability": "mutable",
+                  "name": "powerType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3457:56:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DelegationType_$5224",
+                    "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3261,
+                    "name": "IGovernancePowerDelegationToken.DelegationType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5224,
+                    "src": "3457:46:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DelegationType_$5224",
+                      "typeString": "enum IGovernancePowerDelegationToken.DelegationType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3393:127:6"
+            },
+            "returnParameters": {
+              "id": 3266,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3265,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3277,
+                  "src": "3544:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3264,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3544:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3543:9:6"
+            },
+            "scope": 3278,
+            "src": "3367:297:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3279,
+        "src": "951:2716:6"
+      }
+    ],
+    "src": "38:3631:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0x0AdCe1fFE2Df14a6958fb3F1557B188df548F26c",
+      "transactionHash": "0x3fe6dec51bbd48be109ec42265911aa7c240ba3261161e4d508cbcd81a60729f"
+    }
+  },
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2021-07-05T19:32:25.652Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "SuperKarma*",
+    "details": "Smart contract containing logic to measure users' relative power to propose and vote. User Power = User Power from SuperKarma Token + User Power from stkSuperKarma Token. User Power from Token = Token Power + Token Power as Delegatee [- Token Power if user has delegated] Two wrapper functions linked to SuperKarma Tokens's GovernancePowerDelegationERC20.sol implementation - getPropositionPowerAt: fetching a user Proposition Power at a specified block - getVotingPowerAt: fetching a user Voting Power at a specified block",
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "details": "Constructor, register tokens used for Voting and Proposition Powers.",
+        "params": {
+          "_sKARMA": "The address of the AAVE Token contract.*"
+        }
+      },
+      "getPropositionPowerAt(address,uint256)": {
+        "details": "Returns the Proposition Power of a user at a specific block number.",
+        "params": {
+          "blockNumber": "Blocknumber at which to fetch Proposition Power",
+          "user": "Address of the user."
+        },
+        "returns": {
+          "_0": "Power number*"
+        }
+      },
+      "getTotalPropositionSupplyAt(uint256)": {
+        "details": "Returns the total supply of Proposition Tokens Available for Governance = AAVE Available for governance      + stkAAVE available The supply of AAVE staked in stkAAVE are not taken into account so: = (Supply of AAVE - AAVE in stkAAVE) + (Supply of stkAAVE) = Supply of AAVE, Since the supply of stkAAVE is equal to the number of AAVE staked",
+        "params": {
+          "blockNumber": "Blocknumber at which to evaluate"
+        },
+        "returns": {
+          "_0": "total supply at blockNumber*"
+        }
+      },
+      "getTotalVotingSupplyAt(uint256)": {
+        "details": "Returns the total supply of Outstanding Voting Tokens",
+        "params": {
+          "blockNumber": "Blocknumber at which to evaluate"
+        },
+        "returns": {
+          "_0": "total supply at blockNumber*"
+        }
+      },
+      "getVotingPowerAt(address,uint256)": {
+        "details": "Returns the Vote Power of a user at a specific block number.",
+        "params": {
+          "blockNumber": "Blocknumber at which to fetch Vote Power",
+          "user": "Address of the user."
+        },
+        "returns": {
+          "_0": "Vote number*"
+        }
+      }
+    },
+    "title": "Governance Strategy contract",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

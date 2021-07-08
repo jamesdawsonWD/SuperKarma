@@ -15,47 +15,48 @@
                 </article>
             </div>
         </div>
-        <div :class="{ shadow: dropDownActive }" class="form-row">
+        <div :class="{ shadow: dropDownActive, error: error }" class="form-row">
             <label>{{ label }}</label>
             <span @click="flipDropdown" class="currency"
-                ><DownCaret class="caret" />{{ selected.symbol }}
+                ><DownCaret class="caret" />{{ selected ? selected.symbol : 'CONNECT YOUR WALLET' }}
             </span>
             <input
                 v-model="amount"
-                @input="$emit('update:amount', amount)"
+                @input="
+                    $emit('update:amount', amount);
+                    $emit('changed', amount);
+                "
+                type="number"
                 :id="inputId"
+                pattern="^\d+(?:\.\d{1,2})?$"
+                step="0.01"
                 :placeholder="placeHolder"
             />
         </div>
     </div>
 </template>
 
-<script lang="ts">
+<script>
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { mapActions } from 'vuex';
-import { mapGetters } from 'vuex';
+
 import Button from '@/components/generics/Button.vue';
 import DownCaret from '@/assets/svg/down-caret.svg';
 import Search from '@/assets/svg/search.svg';
 
-@Component({
+export default {
     components: {
-        Button,
         DownCaret,
         Search
     },
     data() {
         return {
             selected: this.tokens[Object.keys(this.tokens)[0]],
-            // selected: this.$store.getters['ST_getAll'][Object.keys(this.$store.getters['ST_getAll'])[0]]
-            //     .symbol,
             dropDownActive: false,
             newAmount: '',
             search: ''
         };
     },
     computed: {
-        ...mapGetters(['ST_getAll']),
         filteredTokens() {
             if (this.search == undefined) return;
             return Object.entries(this.tokens).filter(token => {
@@ -67,20 +68,25 @@ import Search from '@/assets/svg/search.svg';
             });
         }
     },
-    props: ['tokenId', 'label', 'inputId', 'placeHolder', 'currency', 'tokens', 'amount'],
+    props: ['tokenId', 'label', 'inputId', 'placeHolder', 'currency', 'tokens', 'amount', 'error', 'disable'],
+    watch: {
+        tokens: function(val) {
+            this.selected = this.tokens[Object.keys(this.tokens)[0]];
+        }
+    },
     methods: {
-        flipDropdown(): void {
+        flipDropdown() {
+            if (this.disable) return;
             this.dropDownActive = this.dropDownActive ? false : true;
         },
-        select(index, item): void {
+        select(index, item) {
             this.selected = item[1];
             this.dropDownActive = false;
             const key = `${Object.keys(this.tokens)[index]}`;
             this.$emit('assetSelected', { [key]: this.selected });
         }
     }
-})
-export default class StandardInput extends Vue {}
+};
 </script>
 <style scoped lang="scss">
 @import '@/styles';
@@ -109,7 +115,9 @@ export default class StandardInput extends Vue {}
             cursor: pointer;
         }
     }
-
+    .error input {
+        border: var(--danger-color) 2px solid !important;
+    }
     .dropdownVisible {
         height: 300px !important;
         overflow-y: scroll !important;
@@ -124,7 +132,7 @@ export default class StandardInput extends Vue {}
         top: 50px;
         width: 100%;
         padding-top: 30px;
-        background: var(--background-color);
+        background: var(--sub-foreground-color);
         border-radius: 10px;
         box-sizing: border-box;
         overflow-x: hidden;

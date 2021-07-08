@@ -1,0 +1,3246 @@
+{
+  "contractName": "IProposalValidator",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperKarmaGovernance",
+          "name": "governance",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "validateCreatorOfProposal",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperKarmaGovernance",
+          "name": "governance",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "validateProposalCancellation",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperKarmaGovernance",
+          "name": "governance",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "isPropositionPowerEnough",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperKarmaGovernance",
+          "name": "governance",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMinimumPropositionPowerNeeded",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperKarmaGovernance",
+          "name": "governance",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isProposalPassed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperKarmaGovernance",
+          "name": "governance",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isQuorumValid",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperKarmaGovernance",
+          "name": "governance",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isVoteDifferentialValid",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "votingSupply",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMinimumVotingPowerNeeded",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "PROPOSITION_THRESHOLD",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "VOTING_DURATION",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "VOTE_DIFFERENTIAL",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINIMUM_QUORUM",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ONE_HUNDRED_WITH_PRECISION",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"MINIMUM_QUORUM\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ONE_HUNDRED_WITH_PRECISION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PROPOSITION_THRESHOLD\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"VOTE_DIFFERENTIAL\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"VOTING_DURATION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperKarmaGovernance\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"getMinimumPropositionPowerNeeded\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"votingSupply\",\"type\":\"uint256\"}],\"name\":\"getMinimumVotingPowerNeeded\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperKarmaGovernance\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"isProposalPassed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperKarmaGovernance\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"isPropositionPowerEnough\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperKarmaGovernance\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"isQuorumValid\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperKarmaGovernance\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"isVoteDifferentialValid\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperKarmaGovernance\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"validateCreatorOfProposal\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperKarmaGovernance\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"blockNumber\",\"type\":\"uint256\"}],\"name\":\"validateProposalCancellation\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"MINIMUM_QUORUM()\":{\"details\":\"Get quorum threshold constant value to compare with % of for votes/total supply\",\"returns\":{\"_0\":\"the quorum threshold value (100 <=> 1%)*\"}},\"ONE_HUNDRED_WITH_PRECISION()\":{\"details\":\"precision helper: 100% = 10000\",\"returns\":{\"_0\":\"one hundred percents with our chosen precision*\"}},\"PROPOSITION_THRESHOLD()\":{\"details\":\"Get proposition threshold constant value\",\"returns\":{\"_0\":\"the proposition threshold value (100 <=> 1%)*\"}},\"VOTE_DIFFERENTIAL()\":{\"details\":\"Get the vote differential threshold constant value to compare with % of for votes/total supply - % of against votes/total supply\",\"returns\":{\"_0\":\"the vote differential threshold value (100 <=> 1%)*\"}},\"VOTING_DURATION()\":{\"details\":\"Get voting duration constant value\",\"returns\":{\"_0\":\"the voting duration value in seconds*\"}},\"getMinimumPropositionPowerNeeded(address,uint256)\":{\"details\":\"Returns the minimum Proposition Power needed to create a proposition.\",\"params\":{\"blockNumber\":\"Blocknumber at which to evaluate\",\"governance\":\"Governance Contract\"},\"returns\":{\"_0\":\"minimum Proposition Power needed*\"}},\"getMinimumVotingPowerNeeded(uint256)\":{\"details\":\"Calculates the minimum amount of Voting Power needed for a proposal to Pass\",\"params\":{\"votingSupply\":\"Total number of oustanding voting tokens\"},\"returns\":{\"_0\":\"voting power needed for a proposal to pass*\"}},\"isProposalPassed(address,uint256)\":{\"details\":\"Returns whether a proposal passed or not\",\"params\":{\"governance\":\"Governance Contract\",\"proposalId\":\"Id of the proposal to set\"},\"returns\":{\"_0\":\"true if proposal passed*\"}},\"isPropositionPowerEnough(address,address,uint256)\":{\"details\":\"Returns whether a user has enough Proposition Power to make a proposal.\",\"params\":{\"blockNumber\":\"Block Number against which to make the challenge.\",\"governance\":\"Governance Contract\",\"user\":\"Address of the user to be challenged.\"},\"returns\":{\"_0\":\"true if user has enough power*\"}},\"isQuorumValid(address,uint256)\":{\"details\":\"Check whether a proposal has reached quorum, ie has enough FOR-voting-power Here quorum is not to understand as number of votes reached, but number of for-votes reached\",\"params\":{\"governance\":\"Governance Contract\",\"proposalId\":\"Id of the proposal to verify\"},\"returns\":{\"_0\":\"voting power needed for a proposal to pass*\"}},\"isVoteDifferentialValid(address,uint256)\":{\"details\":\"Check whether a proposal has enough extra FOR-votes than AGAINST-votes FOR VOTES - AGAINST VOTES > VOTE_DIFFERENTIAL * voting supply\",\"params\":{\"governance\":\"Governance Contract\",\"proposalId\":\"Id of the proposal to verify\"},\"returns\":{\"_0\":\"true if enough For-Votes*\"}},\"validateCreatorOfProposal(address,address,uint256)\":{\"details\":\"Called to validate a proposal (e.g when creating new proposal in Governance)\",\"params\":{\"blockNumber\":\"Block Number against which to make the test (e.g proposal creation block -1).\",\"governance\":\"Governance Contract\",\"user\":\"Address of the proposal creator\"},\"returns\":{\"_0\":\"boolean, true if can be created*\"}},\"validateProposalCancellation(address,address,uint256)\":{\"details\":\"Called to validate the cancellation of a proposal\",\"params\":{\"blockNumber\":\"Block Number against which to make the test (e.g proposal creation block -1).\",\"governance\":\"Governance Contract\",\"user\":\"Address of the proposal creator\"},\"returns\":{\"_0\":\"boolean, true if can be cancelled*\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IProposalValidator.sol\":\"IProposalValidator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IExecutorWithTimelock.sol\":{\"keccak256\":\"0xc2c4c314e9a81f16049e846e884940854f69f342b2f8838996c117a5bef9b83b\",\"license\":\"agpl-3.0\",\"urls\":[\"bzz-raw://04f860c82db34c844fdef00396bcbaed054b4237548a373bf50178afc23f254c\",\"dweb:/ipfs/QmZFBjZKAYWPeeXE8khtkzr8E8TTqs1fwvW5kZBvbeVWfX\"]},\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IProposalValidator.sol\":{\"keccak256\":\"0xca3df94b94e5a916a7fda5cfee2b646f8d927c47f13ea708c777957b0a9a8b7d\",\"license\":\"agpl-3.0\",\"urls\":[\"bzz-raw://8a3cb3d0c97bc097aa3a861a63ad1389c335b87fe6d93a94dc5ba35c1da273fc\",\"dweb:/ipfs/QmZ1YeGJzKdawvuUFts6hcpXTjPyTBSjFyveXhieGDCvGq\"]},\"/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/ISuperKarmaGovernance.sol\":{\"keccak256\":\"0x0d23f17e2d8bb5b510eb8ccf1c0fcec12ff552a7c100c07091c629ca0cf75215\",\"urls\":[\"bzz-raw://50b08d7add5683fe46b60407a0d99f63f0c03eef04d3ae4eb6d2bd980ac91ea1\",\"dweb:/ipfs/QmYFUGqydxjgk2rDpXJwXjYFuWy11ZFfunZxCM46Ja4A2L\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: agpl-3.0\r\npragma solidity 0.7.0;\r\n\r\nimport {ISuperKarmaGovernance} from './ISuperKarmaGovernance.sol';\r\n\r\ninterface IProposalValidator {\r\n    /**\r\n     * @dev Called to validate a proposal (e.g when creating new proposal in Governance)\r\n     * @param governance Governance Contract\r\n     * @param user Address of the proposal creator\r\n     * @param blockNumber Block Number against which to make the test (e.g proposal creation block -1).\r\n     * @return boolean, true if can be created\r\n     **/\r\n    function validateCreatorOfProposal(\r\n        ISuperKarmaGovernance governance,\r\n        address user,\r\n        uint256 blockNumber\r\n    ) external view returns (bool);\r\n\r\n    /**\r\n     * @dev Called to validate the cancellation of a proposal\r\n     * @param governance Governance Contract\r\n     * @param user Address of the proposal creator\r\n     * @param blockNumber Block Number against which to make the test (e.g proposal creation block -1).\r\n     * @return boolean, true if can be cancelled\r\n     **/\r\n    function validateProposalCancellation(\r\n        ISuperKarmaGovernance governance,\r\n        address user,\r\n        uint256 blockNumber\r\n    ) external view returns (bool);\r\n\r\n    /**\r\n     * @dev Returns whether a user has enough Proposition Power to make a proposal.\r\n     * @param governance Governance Contract\r\n     * @param user Address of the user to be challenged.\r\n     * @param blockNumber Block Number against which to make the challenge.\r\n     * @return true if user has enough power\r\n     **/\r\n    function isPropositionPowerEnough(\r\n        ISuperKarmaGovernance governance,\r\n        address user,\r\n        uint256 blockNumber\r\n    ) external view returns (bool);\r\n\r\n    /**\r\n     * @dev Returns the minimum Proposition Power needed to create a proposition.\r\n     * @param governance Governance Contract\r\n     * @param blockNumber Blocknumber at which to evaluate\r\n     * @return minimum Proposition Power needed\r\n     **/\r\n    function getMinimumPropositionPowerNeeded(ISuperKarmaGovernance governance, uint256 blockNumber)\r\n        external\r\n        view\r\n        returns (uint256);\r\n\r\n    /**\r\n     * @dev Returns whether a proposal passed or not\r\n     * @param governance Governance Contract\r\n     * @param proposalId Id of the proposal to set\r\n     * @return true if proposal passed\r\n     **/\r\n    function isProposalPassed(ISuperKarmaGovernance governance, uint256 proposalId)\r\n        external\r\n        view\r\n        returns (bool);\r\n\r\n    /**\r\n     * @dev Check whether a proposal has reached quorum, ie has enough FOR-voting-power\r\n     * Here quorum is not to understand as number of votes reached, but number of for-votes reached\r\n     * @param governance Governance Contract\r\n     * @param proposalId Id of the proposal to verify\r\n     * @return voting power needed for a proposal to pass\r\n     **/\r\n    function isQuorumValid(ISuperKarmaGovernance governance, uint256 proposalId) external view returns (bool);\r\n\r\n    /**\r\n     * @dev Check whether a proposal has enough extra FOR-votes than AGAINST-votes\r\n     * FOR VOTES - AGAINST VOTES > VOTE_DIFFERENTIAL * voting supply\r\n     * @param governance Governance Contract\r\n     * @param proposalId Id of the proposal to verify\r\n     * @return true if enough For-Votes\r\n     **/\r\n    function isVoteDifferentialValid(ISuperKarmaGovernance governance, uint256 proposalId)\r\n        external\r\n        view\r\n        returns (bool);\r\n\r\n    /**\r\n     * @dev Calculates the minimum amount of Voting Power needed for a proposal to Pass\r\n     * @param votingSupply Total number of oustanding voting tokens\r\n     * @return voting power needed for a proposal to pass\r\n     **/\r\n    function getMinimumVotingPowerNeeded(uint256 votingSupply) external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Get proposition threshold constant value\r\n     * @return the proposition threshold value (100 <=> 1%)\r\n     **/\r\n    function PROPOSITION_THRESHOLD() external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Get voting duration constant value\r\n     * @return the voting duration value in seconds\r\n     **/\r\n    function VOTING_DURATION() external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Get the vote differential threshold constant value\r\n     * to compare with % of for votes/total supply - % of against votes/total supply\r\n     * @return the vote differential threshold value (100 <=> 1%)\r\n     **/\r\n    function VOTE_DIFFERENTIAL() external view returns (uint256);\r\n\r\n    /**\r\n     * @dev Get quorum threshold constant value\r\n     * to compare with % of for votes/total supply\r\n     * @return the quorum threshold value (100 <=> 1%)\r\n     **/\r\n    function MINIMUM_QUORUM() external view returns (uint256);\r\n\r\n    /**\r\n     * @dev precision helper: 100% = 10000\r\n     * @return one hundred percents with our chosen precision\r\n     **/\r\n    function ONE_HUNDRED_WITH_PRECISION() external view returns (uint256);\r\n}\r\n",
+  "sourcePath": "C:\\Users\\James\\projects\\erc20-vue-template\\blockchain\\contracts\\governance\\interfaces\\IProposalValidator.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IProposalValidator.sol",
+    "exportedSymbols": {
+      "IProposalValidator": [
+        6558
+      ]
+    },
+    "id": 6559,
+    "license": "agpl-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6441,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:14"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/ISuperKarmaGovernance.sol",
+        "file": "./ISuperKarmaGovernance.sol",
+        "id": 6443,
+        "nodeType": "ImportDirective",
+        "scope": 6559,
+        "sourceUnit": 6900,
+        "src": "64:66:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 6442,
+              "name": "ISuperKarmaGovernance",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "72:21:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6558,
+        "linearizedBaseContracts": [
+          6558
+        ],
+        "name": "IProposalValidator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 6444,
+              "nodeType": "StructuredDocumentation",
+              "src": "170:354:14",
+              "text": " @dev Called to validate a proposal (e.g when creating new proposal in Governance)\n @param governance Governance Contract\n @param user Address of the proposal creator\n @param blockNumber Block Number against which to make the test (e.g proposal creation block -1).\n @return boolean, true if can be created*"
+            },
+            "functionSelector": "d0d90298",
+            "id": 6455,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateCreatorOfProposal",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6451,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6446,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "575:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6445,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "575:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6448,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "618:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6447,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "618:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6450,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "641:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6449,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "641:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "564:103:14"
+            },
+            "returnParameters": {
+              "id": 6454,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6453,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "691:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6452,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "690:6:14"
+            },
+            "scope": 6558,
+            "src": "530:167:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6456,
+              "nodeType": "StructuredDocumentation",
+              "src": "705:329:14",
+              "text": " @dev Called to validate the cancellation of a proposal\n @param governance Governance Contract\n @param user Address of the proposal creator\n @param blockNumber Block Number against which to make the test (e.g proposal creation block -1).\n @return boolean, true if can be cancelled*"
+            },
+            "functionSelector": "31a7bc41",
+            "id": 6467,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateProposalCancellation",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6463,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6458,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1088:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6457,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "1088:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6460,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1131:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6459,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1131:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6462,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1154:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6461,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1154:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1077:103:14"
+            },
+            "returnParameters": {
+              "id": 6466,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6465,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1204:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6464,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1204:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1203:6:14"
+            },
+            "scope": 6558,
+            "src": "1040:170:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6468,
+              "nodeType": "StructuredDocumentation",
+              "src": "1218:325:14",
+              "text": " @dev Returns whether a user has enough Proposition Power to make a proposal.\n @param governance Governance Contract\n @param user Address of the user to be challenged.\n @param blockNumber Block Number against which to make the challenge.\n @return true if user has enough power*"
+            },
+            "functionSelector": "66121042",
+            "id": 6479,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isPropositionPowerEnough",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6470,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1593:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6469,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "1593:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6472,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1636:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6471,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1636:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6474,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1659:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6473,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1659:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1582:103:14"
+            },
+            "returnParameters": {
+              "id": 6478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6477,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1709:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6476,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1709:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1708:6:14"
+            },
+            "scope": 6558,
+            "src": "1549:166:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6480,
+              "nodeType": "StructuredDocumentation",
+              "src": "1723:251:14",
+              "text": " @dev Returns the minimum Proposition Power needed to create a proposition.\n @param governance Governance Contract\n @param blockNumber Blocknumber at which to evaluate\n @return minimum Proposition Power needed*"
+            },
+            "functionSelector": "f48cb134",
+            "id": 6489,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMinimumPropositionPowerNeeded",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6485,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6482,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6489,
+                  "src": "2022:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6481,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "2022:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6484,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6489,
+                  "src": "2056:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6483,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2056:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2021:55:14"
+            },
+            "returnParameters": {
+              "id": 6488,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6487,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6489,
+                  "src": "2127:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6486,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2127:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2126:9:14"
+            },
+            "scope": 6558,
+            "src": "1980:156:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6490,
+              "nodeType": "StructuredDocumentation",
+              "src": "2144:205:14",
+              "text": " @dev Returns whether a proposal passed or not\n @param governance Governance Contract\n @param proposalId Id of the proposal to set\n @return true if proposal passed*"
+            },
+            "functionSelector": "06fbb3ab",
+            "id": 6499,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isProposalPassed",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6495,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6492,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6499,
+                  "src": "2381:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6491,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "2381:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6494,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6499,
+                  "src": "2415:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6493,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2415:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2380:54:14"
+            },
+            "returnParameters": {
+              "id": 6498,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6497,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6499,
+                  "src": "2485:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6496,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2485:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2484:6:14"
+            },
+            "scope": 6558,
+            "src": "2355:136:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6500,
+              "nodeType": "StructuredDocumentation",
+              "src": "2499:363:14",
+              "text": " @dev Check whether a proposal has reached quorum, ie has enough FOR-voting-power\n Here quorum is not to understand as number of votes reached, but number of for-votes reached\n @param governance Governance Contract\n @param proposalId Id of the proposal to verify\n @return voting power needed for a proposal to pass*"
+            },
+            "functionSelector": "ace43209",
+            "id": 6509,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isQuorumValid",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6505,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6502,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6509,
+                  "src": "2891:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6501,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "2891:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6504,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6509,
+                  "src": "2925:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6503,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2925:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2890:54:14"
+            },
+            "returnParameters": {
+              "id": 6508,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6507,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6509,
+                  "src": "2968:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6506,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2968:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2967:6:14"
+            },
+            "scope": 6558,
+            "src": "2868:106:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6510,
+              "nodeType": "StructuredDocumentation",
+              "src": "2982:309:14",
+              "text": " @dev Check whether a proposal has enough extra FOR-votes than AGAINST-votes\n FOR VOTES - AGAINST VOTES > VOTE_DIFFERENTIAL * voting supply\n @param governance Governance Contract\n @param proposalId Id of the proposal to verify\n @return true if enough For-Votes*"
+            },
+            "functionSelector": "7aa50080",
+            "id": 6519,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isVoteDifferentialValid",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6515,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6512,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6519,
+                  "src": "3330:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6511,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "3330:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6514,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6519,
+                  "src": "3364:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6513,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3364:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3329:54:14"
+            },
+            "returnParameters": {
+              "id": 6518,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6517,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6519,
+                  "src": "3434:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6516,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3434:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3433:6:14"
+            },
+            "scope": 6558,
+            "src": "3297:143:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6520,
+              "nodeType": "StructuredDocumentation",
+              "src": "3448:230:14",
+              "text": " @dev Calculates the minimum amount of Voting Power needed for a proposal to Pass\n @param votingSupply Total number of oustanding voting tokens\n @return voting power needed for a proposal to pass*"
+            },
+            "functionSelector": "e50f8400",
+            "id": 6527,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMinimumVotingPowerNeeded",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6523,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6522,
+                  "mutability": "mutable",
+                  "name": "votingSupply",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6527,
+                  "src": "3721:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6521,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3721:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3720:22:14"
+            },
+            "returnParameters": {
+              "id": 6526,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6525,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6527,
+                  "src": "3766:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6524,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3766:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3765:9:14"
+            },
+            "scope": 6558,
+            "src": "3684:91:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6528,
+              "nodeType": "StructuredDocumentation",
+              "src": "3783:128:14",
+              "text": " @dev Get proposition threshold constant value\n @return the proposition threshold value (100 <=> 1%)*"
+            },
+            "functionSelector": "fd58afd4",
+            "id": 6533,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "PROPOSITION_THRESHOLD",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6529,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3947:2:14"
+            },
+            "returnParameters": {
+              "id": 6532,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6531,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6533,
+                  "src": "3973:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6530,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3973:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3972:9:14"
+            },
+            "scope": 6558,
+            "src": "3917:65:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6534,
+              "nodeType": "StructuredDocumentation",
+              "src": "3990:114:14",
+              "text": " @dev Get voting duration constant value\n @return the voting duration value in seconds*"
+            },
+            "functionSelector": "a438d208",
+            "id": 6539,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "VOTING_DURATION",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6535,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4134:2:14"
+            },
+            "returnParameters": {
+              "id": 6538,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6537,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6539,
+                  "src": "4160:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6536,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4160:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4159:9:14"
+            },
+            "scope": 6558,
+            "src": "4110:59:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6540,
+              "nodeType": "StructuredDocumentation",
+              "src": "4177:230:14",
+              "text": " @dev Get the vote differential threshold constant value\n to compare with % of for votes/total supply - % of against votes/total supply\n @return the vote differential threshold value (100 <=> 1%)*"
+            },
+            "functionSelector": "9125fb58",
+            "id": 6545,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "VOTE_DIFFERENTIAL",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6541,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4439:2:14"
+            },
+            "returnParameters": {
+              "id": 6544,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6543,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6545,
+                  "src": "4465:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6542,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4465:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4464:9:14"
+            },
+            "scope": 6558,
+            "src": "4413:61:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6546,
+              "nodeType": "StructuredDocumentation",
+              "src": "4482:170:14",
+              "text": " @dev Get quorum threshold constant value\n to compare with % of for votes/total supply\n @return the quorum threshold value (100 <=> 1%)*"
+            },
+            "functionSelector": "b159beac",
+            "id": 6551,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "MINIMUM_QUORUM",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6547,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4681:2:14"
+            },
+            "returnParameters": {
+              "id": 6550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6549,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6551,
+                  "src": "4707:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6548,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4707:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4706:9:14"
+            },
+            "scope": 6558,
+            "src": "4658:58:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6552,
+              "nodeType": "StructuredDocumentation",
+              "src": "4724:120:14",
+              "text": " @dev precision helper: 100% = 10000\n @return one hundred percents with our chosen precision*"
+            },
+            "functionSelector": "1d73fd6d",
+            "id": 6557,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ONE_HUNDRED_WITH_PRECISION",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6553,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4885:2:14"
+            },
+            "returnParameters": {
+              "id": 6556,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6555,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6557,
+                  "src": "4911:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6554,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4911:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4910:9:14"
+            },
+            "scope": 6558,
+            "src": "4850:70:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6559,
+        "src": "134:4789:14"
+      }
+    ],
+    "src": "38:4887:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/IProposalValidator.sol",
+    "exportedSymbols": {
+      "IProposalValidator": [
+        6558
+      ]
+    },
+    "id": 6559,
+    "license": "agpl-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6441,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:14"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/erc20-vue-template/blockchain/contracts/governance/interfaces/ISuperKarmaGovernance.sol",
+        "file": "./ISuperKarmaGovernance.sol",
+        "id": 6443,
+        "nodeType": "ImportDirective",
+        "scope": 6559,
+        "sourceUnit": 6900,
+        "src": "64:66:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 6442,
+              "name": "ISuperKarmaGovernance",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "72:21:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6558,
+        "linearizedBaseContracts": [
+          6558
+        ],
+        "name": "IProposalValidator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 6444,
+              "nodeType": "StructuredDocumentation",
+              "src": "170:354:14",
+              "text": " @dev Called to validate a proposal (e.g when creating new proposal in Governance)\n @param governance Governance Contract\n @param user Address of the proposal creator\n @param blockNumber Block Number against which to make the test (e.g proposal creation block -1).\n @return boolean, true if can be created*"
+            },
+            "functionSelector": "d0d90298",
+            "id": 6455,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateCreatorOfProposal",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6451,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6446,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "575:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6445,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "575:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6448,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "618:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6447,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "618:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6450,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "641:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6449,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "641:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "564:103:14"
+            },
+            "returnParameters": {
+              "id": 6454,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6453,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6455,
+                  "src": "691:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6452,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "690:6:14"
+            },
+            "scope": 6558,
+            "src": "530:167:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6456,
+              "nodeType": "StructuredDocumentation",
+              "src": "705:329:14",
+              "text": " @dev Called to validate the cancellation of a proposal\n @param governance Governance Contract\n @param user Address of the proposal creator\n @param blockNumber Block Number against which to make the test (e.g proposal creation block -1).\n @return boolean, true if can be cancelled*"
+            },
+            "functionSelector": "31a7bc41",
+            "id": 6467,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validateProposalCancellation",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6463,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6458,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1088:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6457,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "1088:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6460,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1131:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6459,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1131:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6462,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1154:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6461,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1154:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1077:103:14"
+            },
+            "returnParameters": {
+              "id": 6466,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6465,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6467,
+                  "src": "1204:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6464,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1204:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1203:6:14"
+            },
+            "scope": 6558,
+            "src": "1040:170:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6468,
+              "nodeType": "StructuredDocumentation",
+              "src": "1218:325:14",
+              "text": " @dev Returns whether a user has enough Proposition Power to make a proposal.\n @param governance Governance Contract\n @param user Address of the user to be challenged.\n @param blockNumber Block Number against which to make the challenge.\n @return true if user has enough power*"
+            },
+            "functionSelector": "66121042",
+            "id": 6479,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isPropositionPowerEnough",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6470,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1593:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6469,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "1593:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6472,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1636:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6471,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1636:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6474,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1659:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6473,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1659:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1582:103:14"
+            },
+            "returnParameters": {
+              "id": 6478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6477,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6479,
+                  "src": "1709:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6476,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1709:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1708:6:14"
+            },
+            "scope": 6558,
+            "src": "1549:166:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6480,
+              "nodeType": "StructuredDocumentation",
+              "src": "1723:251:14",
+              "text": " @dev Returns the minimum Proposition Power needed to create a proposition.\n @param governance Governance Contract\n @param blockNumber Blocknumber at which to evaluate\n @return minimum Proposition Power needed*"
+            },
+            "functionSelector": "f48cb134",
+            "id": 6489,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMinimumPropositionPowerNeeded",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6485,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6482,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6489,
+                  "src": "2022:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6481,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "2022:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6484,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6489,
+                  "src": "2056:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6483,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2056:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2021:55:14"
+            },
+            "returnParameters": {
+              "id": 6488,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6487,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6489,
+                  "src": "2127:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6486,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2127:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2126:9:14"
+            },
+            "scope": 6558,
+            "src": "1980:156:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6490,
+              "nodeType": "StructuredDocumentation",
+              "src": "2144:205:14",
+              "text": " @dev Returns whether a proposal passed or not\n @param governance Governance Contract\n @param proposalId Id of the proposal to set\n @return true if proposal passed*"
+            },
+            "functionSelector": "06fbb3ab",
+            "id": 6499,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isProposalPassed",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6495,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6492,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6499,
+                  "src": "2381:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6491,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "2381:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6494,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6499,
+                  "src": "2415:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6493,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2415:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2380:54:14"
+            },
+            "returnParameters": {
+              "id": 6498,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6497,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6499,
+                  "src": "2485:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6496,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2485:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2484:6:14"
+            },
+            "scope": 6558,
+            "src": "2355:136:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6500,
+              "nodeType": "StructuredDocumentation",
+              "src": "2499:363:14",
+              "text": " @dev Check whether a proposal has reached quorum, ie has enough FOR-voting-power\n Here quorum is not to understand as number of votes reached, but number of for-votes reached\n @param governance Governance Contract\n @param proposalId Id of the proposal to verify\n @return voting power needed for a proposal to pass*"
+            },
+            "functionSelector": "ace43209",
+            "id": 6509,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isQuorumValid",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6505,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6502,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6509,
+                  "src": "2891:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6501,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "2891:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6504,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6509,
+                  "src": "2925:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6503,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2925:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2890:54:14"
+            },
+            "returnParameters": {
+              "id": 6508,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6507,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6509,
+                  "src": "2968:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6506,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2968:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2967:6:14"
+            },
+            "scope": 6558,
+            "src": "2868:106:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6510,
+              "nodeType": "StructuredDocumentation",
+              "src": "2982:309:14",
+              "text": " @dev Check whether a proposal has enough extra FOR-votes than AGAINST-votes\n FOR VOTES - AGAINST VOTES > VOTE_DIFFERENTIAL * voting supply\n @param governance Governance Contract\n @param proposalId Id of the proposal to verify\n @return true if enough For-Votes*"
+            },
+            "functionSelector": "7aa50080",
+            "id": 6519,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isVoteDifferentialValid",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6515,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6512,
+                  "mutability": "mutable",
+                  "name": "governance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6519,
+                  "src": "3330:32:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                    "typeString": "contract ISuperKarmaGovernance"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6511,
+                    "name": "ISuperKarmaGovernance",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6899,
+                    "src": "3330:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISuperKarmaGovernance_$6899",
+                      "typeString": "contract ISuperKarmaGovernance"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6514,
+                  "mutability": "mutable",
+                  "name": "proposalId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6519,
+                  "src": "3364:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6513,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3364:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3329:54:14"
+            },
+            "returnParameters": {
+              "id": 6518,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6517,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6519,
+                  "src": "3434:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6516,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3434:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3433:6:14"
+            },
+            "scope": 6558,
+            "src": "3297:143:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6520,
+              "nodeType": "StructuredDocumentation",
+              "src": "3448:230:14",
+              "text": " @dev Calculates the minimum amount of Voting Power needed for a proposal to Pass\n @param votingSupply Total number of oustanding voting tokens\n @return voting power needed for a proposal to pass*"
+            },
+            "functionSelector": "e50f8400",
+            "id": 6527,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMinimumVotingPowerNeeded",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6523,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6522,
+                  "mutability": "mutable",
+                  "name": "votingSupply",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6527,
+                  "src": "3721:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6521,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3721:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3720:22:14"
+            },
+            "returnParameters": {
+              "id": 6526,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6525,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6527,
+                  "src": "3766:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6524,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3766:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3765:9:14"
+            },
+            "scope": 6558,
+            "src": "3684:91:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6528,
+              "nodeType": "StructuredDocumentation",
+              "src": "3783:128:14",
+              "text": " @dev Get proposition threshold constant value\n @return the proposition threshold value (100 <=> 1%)*"
+            },
+            "functionSelector": "fd58afd4",
+            "id": 6533,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "PROPOSITION_THRESHOLD",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6529,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3947:2:14"
+            },
+            "returnParameters": {
+              "id": 6532,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6531,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6533,
+                  "src": "3973:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6530,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3973:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3972:9:14"
+            },
+            "scope": 6558,
+            "src": "3917:65:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6534,
+              "nodeType": "StructuredDocumentation",
+              "src": "3990:114:14",
+              "text": " @dev Get voting duration constant value\n @return the voting duration value in seconds*"
+            },
+            "functionSelector": "a438d208",
+            "id": 6539,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "VOTING_DURATION",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6535,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4134:2:14"
+            },
+            "returnParameters": {
+              "id": 6538,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6537,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6539,
+                  "src": "4160:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6536,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4160:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4159:9:14"
+            },
+            "scope": 6558,
+            "src": "4110:59:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6540,
+              "nodeType": "StructuredDocumentation",
+              "src": "4177:230:14",
+              "text": " @dev Get the vote differential threshold constant value\n to compare with % of for votes/total supply - % of against votes/total supply\n @return the vote differential threshold value (100 <=> 1%)*"
+            },
+            "functionSelector": "9125fb58",
+            "id": 6545,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "VOTE_DIFFERENTIAL",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6541,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4439:2:14"
+            },
+            "returnParameters": {
+              "id": 6544,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6543,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6545,
+                  "src": "4465:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6542,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4465:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4464:9:14"
+            },
+            "scope": 6558,
+            "src": "4413:61:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6546,
+              "nodeType": "StructuredDocumentation",
+              "src": "4482:170:14",
+              "text": " @dev Get quorum threshold constant value\n to compare with % of for votes/total supply\n @return the quorum threshold value (100 <=> 1%)*"
+            },
+            "functionSelector": "b159beac",
+            "id": 6551,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "MINIMUM_QUORUM",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6547,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4681:2:14"
+            },
+            "returnParameters": {
+              "id": 6550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6549,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6551,
+                  "src": "4707:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6548,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4707:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4706:9:14"
+            },
+            "scope": 6558,
+            "src": "4658:58:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6552,
+              "nodeType": "StructuredDocumentation",
+              "src": "4724:120:14",
+              "text": " @dev precision helper: 100% = 10000\n @return one hundred percents with our chosen precision*"
+            },
+            "functionSelector": "1d73fd6d",
+            "id": 6557,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ONE_HUNDRED_WITH_PRECISION",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6553,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4885:2:14"
+            },
+            "returnParameters": {
+              "id": 6556,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6555,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6557,
+                  "src": "4911:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6554,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4911:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4910:9:14"
+            },
+            "scope": 6558,
+            "src": "4850:70:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6559,
+        "src": "134:4789:14"
+      }
+    ],
+    "src": "38:4887:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2021-07-05T19:25:53.545Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "MINIMUM_QUORUM()": {
+        "details": "Get quorum threshold constant value to compare with % of for votes/total supply",
+        "returns": {
+          "_0": "the quorum threshold value (100 <=> 1%)*"
+        }
+      },
+      "ONE_HUNDRED_WITH_PRECISION()": {
+        "details": "precision helper: 100% = 10000",
+        "returns": {
+          "_0": "one hundred percents with our chosen precision*"
+        }
+      },
+      "PROPOSITION_THRESHOLD()": {
+        "details": "Get proposition threshold constant value",
+        "returns": {
+          "_0": "the proposition threshold value (100 <=> 1%)*"
+        }
+      },
+      "VOTE_DIFFERENTIAL()": {
+        "details": "Get the vote differential threshold constant value to compare with % of for votes/total supply - % of against votes/total supply",
+        "returns": {
+          "_0": "the vote differential threshold value (100 <=> 1%)*"
+        }
+      },
+      "VOTING_DURATION()": {
+        "details": "Get voting duration constant value",
+        "returns": {
+          "_0": "the voting duration value in seconds*"
+        }
+      },
+      "getMinimumPropositionPowerNeeded(address,uint256)": {
+        "details": "Returns the minimum Proposition Power needed to create a proposition.",
+        "params": {
+          "blockNumber": "Blocknumber at which to evaluate",
+          "governance": "Governance Contract"
+        },
+        "returns": {
+          "_0": "minimum Proposition Power needed*"
+        }
+      },
+      "getMinimumVotingPowerNeeded(uint256)": {
+        "details": "Calculates the minimum amount of Voting Power needed for a proposal to Pass",
+        "params": {
+          "votingSupply": "Total number of oustanding voting tokens"
+        },
+        "returns": {
+          "_0": "voting power needed for a proposal to pass*"
+        }
+      },
+      "isProposalPassed(address,uint256)": {
+        "details": "Returns whether a proposal passed or not",
+        "params": {
+          "governance": "Governance Contract",
+          "proposalId": "Id of the proposal to set"
+        },
+        "returns": {
+          "_0": "true if proposal passed*"
+        }
+      },
+      "isPropositionPowerEnough(address,address,uint256)": {
+        "details": "Returns whether a user has enough Proposition Power to make a proposal.",
+        "params": {
+          "blockNumber": "Block Number against which to make the challenge.",
+          "governance": "Governance Contract",
+          "user": "Address of the user to be challenged."
+        },
+        "returns": {
+          "_0": "true if user has enough power*"
+        }
+      },
+      "isQuorumValid(address,uint256)": {
+        "details": "Check whether a proposal has reached quorum, ie has enough FOR-voting-power Here quorum is not to understand as number of votes reached, but number of for-votes reached",
+        "params": {
+          "governance": "Governance Contract",
+          "proposalId": "Id of the proposal to verify"
+        },
+        "returns": {
+          "_0": "voting power needed for a proposal to pass*"
+        }
+      },
+      "isVoteDifferentialValid(address,uint256)": {
+        "details": "Check whether a proposal has enough extra FOR-votes than AGAINST-votes FOR VOTES - AGAINST VOTES > VOTE_DIFFERENTIAL * voting supply",
+        "params": {
+          "governance": "Governance Contract",
+          "proposalId": "Id of the proposal to verify"
+        },
+        "returns": {
+          "_0": "true if enough For-Votes*"
+        }
+      },
+      "validateCreatorOfProposal(address,address,uint256)": {
+        "details": "Called to validate a proposal (e.g when creating new proposal in Governance)",
+        "params": {
+          "blockNumber": "Block Number against which to make the test (e.g proposal creation block -1).",
+          "governance": "Governance Contract",
+          "user": "Address of the proposal creator"
+        },
+        "returns": {
+          "_0": "boolean, true if can be created*"
+        }
+      },
+      "validateProposalCancellation(address,address,uint256)": {
+        "details": "Called to validate the cancellation of a proposal",
+        "params": {
+          "blockNumber": "Block Number against which to make the test (e.g proposal creation block -1).",
+          "governance": "Governance Contract",
+          "user": "Address of the proposal creator"
+        },
+        "returns": {
+          "_0": "boolean, true if can be cancelled*"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

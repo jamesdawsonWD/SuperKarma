@@ -1,13 +1,18 @@
 <template>
-    <button class="button" :class="buttonStyle" @click="submit">
-        {{ title }}
+    <button
+        class="button"
+        :class="[buttonStyle, disabled ? 'disabled' : '', highlight ? 'highlight' : '']"
+        @click="submit"
+        :disabled="disabled"
+    >
+        <span>{{ title }}</span>
     </button>
 </template>
 
 <script>
 export default {
     name: 'Button',
-    props: ['title', 'buttonStyle'],
+    props: ['title', 'buttonStyle', 'disabled', 'loading', 'highlight'],
     methods: {
         submit: function() {
             this.$emit('clicked');
@@ -33,18 +38,37 @@ export default {
     }
 }
 
+.disabled {
+    background: var(--sub-foreground-color) !important;
+    color: var(--button-color) !important;
+    &:hover {
+        cursor: initial !important;
+    }
+}
 .danger {
-    background: #f43;
+    background: var(--danger-color);
+    color: var(--danger-color) !important;
+}
+
+.loading {
+    padding: 0 !important;
+}
+.primary {
+    background: linear-gradient(33deg, rgba(17, 153, 142, 1) 0%, rgba(56, 239, 125, 1) 100%);
     color: white;
     &:hover {
-        background: darken(#f43, 33%);
     }
 }
 
-.primary {
-    background: var(--button-color);
-    color: white;
+.gray {
+    background: var(--sub-foreground-color);
     &:hover {
+        background: var(--main-font);
+        color: white;
     }
+}
+.highlight {
+    background: var(--main-font);
+    color: white;
 }
 </style>

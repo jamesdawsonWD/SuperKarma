@@ -14,5 +14,13 @@ export const mutations: MutationTree<UserInterfaceManager> = {
         (state.planetDiscoveredMessage = msg),
     SET_PLANET_DISCOVERED_HEADER: (state: UserInterfaceManager, header: string) =>
         (state.planetDiscoveredHeader = header),
-    SET_MODAL_TYPE: (state: UserInterfaceManager, payload: string) => (state.modal.type = payload)
+    SET_MODAL_TYPE: (state: UserInterfaceManager, payload: string) => (state.modal.type = payload),
+    SET_DONATION_ADDRESS: (state: UserInterfaceManager, payload: string) => {
+        console.log(state.payload);
+        console.log('here1');
+
+        state.donationAddress = payload;
+        console.log(state);
+    },
+    SET_DONATIONS: (state: UserInterfaceManager, payload: { donationPool: string, flowPecentage: string }[]) => (state.donations = payload)
 };

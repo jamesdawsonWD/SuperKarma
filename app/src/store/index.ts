@@ -2,7 +2,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { network } from './Network';
 import { tokens } from './Tokens';
+import { superFluid } from './SuperFluid';
 import { userInterfaceManager } from './UserInterfaceManager';
+import { superFluidPool } from './SuperFluidPool';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -13,8 +15,9 @@ export default new Vuex.Store({
     actions: {},
     modules: {
         network,
-        tokens,
+        superFluid,
         userInterfaceManager,
+        superFluidPool
     },
     plugins: []
 });
